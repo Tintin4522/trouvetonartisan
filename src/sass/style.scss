@@ -1,10 +1,9 @@
+@import '_mixins.scss';
+
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: #f1f8fc;
+  @include reset;
 }
 
 nav {
@@ -22,11 +21,13 @@ nav {
   object-fit: contain;
 }
 
-.nav-icon {
+.nav-icon{
   display: flex;
   align-items: center;
   text-decoration: none;
 }
+
+
 
 .navlinks-container a {
   margin: 0 10px;
@@ -61,13 +62,16 @@ nav {
     height: 15vh;
     object-fit: contain;
   }
+
   nav {
     padding: 15px 20px;
     position: relative;
   }
+
   .nav-icon {
     margin: 0 auto;
   }
+
   .hamburger {
     width: 20px;
     height: 20px;
@@ -77,6 +81,7 @@ nav {
     align-items: center;
     position: relative;
   }
+
   .hamburger span {
     display: block;
     width: 100%;
@@ -86,26 +91,33 @@ nav {
     pointer-events: none;
     transition: opacity 0.3s 0.15s ease-out;
   }
+
   .hamburger span:nth-child(1),
   .hamburger span:nth-child(3) {
-    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out ;
   }
+
   .hamburger span:nth-child(1) {
-    transform: translateY(7px);
+    transform: translateY(7px) ;
   }
+
   .hamburger span:nth-child(3) {
     transform: translateY(-7px);
   }
+
   .hamburger.open span:nth-child(1) {
     transform: translate(0) rotate(135deg);
   }
+
   .hamburger.open span:nth-child(2) {
     opacity: 0;
     transition: opacity 0s ease-out;
   }
+
   .hamburger.open span:nth-child(3) {
     transform: translate(0) rotate(-135deg);
   }
+
   .navlinks-container {
     display: flex;
     flex-direction: column;
@@ -122,9 +134,8 @@ nav {
     width: 100%;
     z-index: -1;
   }
+
   .open {
     transform: translate(0%);
   }
 }
-
-/*# sourceMappingURL=index.css.map */
