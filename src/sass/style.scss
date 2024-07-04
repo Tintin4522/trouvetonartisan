@@ -6,6 +6,45 @@
   @include reset;
 }
 
+.header {
+  position: fixed;
+  z-index: 1000;
+}
+
+.header {
+  nav {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 15px 25px;
+      box-shadow: inset 0px -1px 0px #c5c5c6;
+      width: 100%;
+
+      .nav-icon {
+        height: 25vh;
+        width: auto;
+        max-width: 50%;
+        text-align: left;
+
+        .img-header {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      
+
+      .header-left {
+        width: 50%; 
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; 
+        flex-grow: 1; 
+      }
+    }
+  }
+
 nav {
   position: fixed;
   width: 100%;
@@ -15,11 +54,6 @@ nav {
   box-shadow: inset 0px -1px 0px #c5c5c6;
 }
 
-.img-header {
-  max-width: 20vw;
-  max-height: 20vh;
-  object-fit: contain;
-}
 
 .nav-icon{
   display: flex;
@@ -27,16 +61,23 @@ nav {
   text-decoration: none;
 }
 
-
+.search-icon {
+  border: none;
+  color: #0074c7;
+}
 
 .navlinks-container a {
-  margin: 0 10px;
+  margin: 10px 10px;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
   color: #384050;
   display: inline-block;
   position: relative;
+}
+
+.navlinks-container a:hover {
+  color: #82b864;
 }
 
 .navlinks-container a::after {
@@ -48,7 +89,7 @@ nav {
   height: 1px;
   transform: scaleX(0);
   transform-origin: left;
-  background: #384050;
+  background: #82b864;
   transition: transform 0.3s ease-out;
 }
 
@@ -56,20 +97,65 @@ nav {
   transform: scaleX(1);
 }
 
+.search-input {
+  width: 80%;
+  border: none;
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-right: 2px solid #0074c7;
+  border-bottom: 2px solid #0074c7;
+}
+
+input:focus {
+  outline: none;
+}
+
 @media (max-width: 900px) {
   .img-header {
-    width: 25vw;
-    height: 15vh;
+    
     object-fit: contain;
+    text-align: left;
+  }
+
+  .header {
+    width: 100%;
   }
 
   nav {
     padding: 15px 20px;
     position: relative;
+    width: 100%;
   }
 
   .nav-icon {
     margin: 0 auto;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; 
+  }
+
+  .search-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px; 
   }
 
   .hamburger {
@@ -80,6 +166,7 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
+    margin-right: 20px;
   }
 
   .hamburger span {
@@ -135,7 +222,85 @@ nav {
     z-index: -1;
   }
 
+  .navlinks-container.open {
+    text-align: center;
+    padding-top: 5vh;
+  }
+
   .open {
     transform: translate(0%);
+    z-index: 10;
   }
+
+  .mobile-search input {
+    width: 80%;
+    border: none;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-right: 2px solid #0074c7;
+    border-bottom: 2px solid #0074c7;
+  }
+}
+
+//Mise en page du site
+
+
+
+.page {
+  padding-top: 25vh;
+}
+
+// mise en page de Home
+
+.tuto {
+  justify-content: center;
+  text-align: center;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+  border: 2px solid #0074c7;
+  border-radius: 10px;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+h1 {
+  color: #0074c7;
+}
+
+li {
+  margin-bottom: 1rem;
+  color: #384050;
+}
+
+@media (max-width: 900px) {
+  .tuto {
+    max-width: 80%;
+  }
+}
+
+
+// Mise en page du composant artisan
+
+.artisan-card {
+  padding: 5vh 5vw;
+}
+
+.titleCard {
+  color: #0074c7;
+  justify-content: center;
+}
+
+.fas.fa-star {
+  color: #0074c7;
+}
+
+.artisan {
+  margin: 2vh 2vw;
+  padding: 2vh 2vw;
+  border: 2px solid #0074c7;
+  border-radius: 5px;
+  overflow: hidden;
 }
