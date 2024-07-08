@@ -7,6 +7,16 @@
   background-color: #f1f8fc;
 }
 
+@font-face {
+  font-family: "Graphik";
+  src: url("./Fonts/GraphikCompact-Regular-Trial.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "Graphik", sans-serif;
+}
+
 .header {
   position: fixed;
   z-index: 1000;
@@ -17,7 +27,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
-  box-shadow: inset 0px -1px 0px #c5c5c6;
+  box-shadow: inset 0px -1px 0px #384050;
   width: 100%;
 }
 .header nav .nav-icon {
@@ -45,7 +55,7 @@ nav {
   display: flex;
   align-items: center;
   padding: 15px 25px;
-  box-shadow: inset 0px -1px 0px #c5c5c6;
+  box-shadow: inset 0px -1px 0px #384050;
 }
 
 .nav-icon {
@@ -218,6 +228,51 @@ input:focus {
     border-bottom: 2px solid #0074c7;
   }
 }
+.adress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #0074c7;
+  padding-top: 15px;
+}
+.adress p {
+  color: #f1f8fc;
+  background-color: #0074c7;
+}
+.adress a {
+  color: #f1f8fc;
+  text-decoration: none;
+}
+
+.legalesPages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  background-color: #0074c7;
+}
+.legalesPages a {
+  margin: 10px 20px;
+  text-decoration: none;
+  color: #f1f8fc;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialLinks a {
+  color: #384050;
+  margin: 10px 10px;
+  font-size: 28px;
+}
+
 .page {
   padding-top: 25vh;
 }
@@ -238,8 +293,8 @@ h1 {
 }
 
 li {
-  margin-bottom: 1rem;
   color: #384050;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 900px) {
@@ -249,6 +304,12 @@ li {
 }
 .artisan-card {
   padding: 5vh 5vw;
+}
+
+.artisan-card:hover,
+.artisan-link:hover {
+  color: #00497c;
+  text-decoration: none;
 }
 
 .titleCard {
@@ -266,6 +327,82 @@ li {
   border: 2px solid #0074c7;
   border-radius: 5px;
   overflow: hidden;
+}
+
+.page-notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 20vh;
+}
+
+.img-pagenotfound {
+  width: 80%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+.text-pagenotfound {
+  color: #0074c7;
+  font-size: 3rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.artisanDetails {
+  width: 80%;
+  margin: auto;
+  padding-top: 40vh;
+  padding-bottom: 10vh;
+}
+
+h2 {
+  color: #0074c7;
+  padding-bottom: 4vh;
+}
+
+h3 {
+  color: #384050;
+}
+
+h4 {
+  color: #00497c;
+}
+
+.container {
+  border: 2px solid #0074c7;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.mb-auto {
+  border: 1px solid #0074c7;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.artisanSiteWeb {
+  color: #f1f8fc;
+  background-color: #0074c7;
+  border: 1px solid #00497c;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 20px 20px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.artisanSiteWeb:hover {
+  background-color: #00497c;
+}
+
+.btn-success {
+  background-color: #82b864;
+  color: #f1f8fc;
 }
 
 /*# sourceMappingURL=index.css.map */
