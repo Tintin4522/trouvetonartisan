@@ -8,9 +8,9 @@ function Fabrication() {
 
     return (
 
-        <div className="page">            
+        <main className="page">            
             <FabricationArtisans fabricationArtisans={fabricationArtisans()} />
-        </div>
+        </main>
     )
 }
 

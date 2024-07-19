@@ -59,7 +59,7 @@ const ArtisanDetail = () => {
     }
 
     return (
-        <div className="artisanDetails">
+        <section className="artisanDetails">
             <div className="container">
             <h2 className="text-center">{artisan.name}</h2>
                 <div className="row">
@@ -119,7 +119,7 @@ const ArtisanDetail = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -8,9 +8,9 @@ function Services() {
 
     return (
 
-        <div className="page">            
+        <main className="page">            
             <ServicesArtisans servicesArtisans={servicesArtisans()} />
-        </div>
+        </main>
     )
 }
 

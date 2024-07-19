@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function FabricationArtisans({ fabricationArtisans }) {
     return (
-        <div className="artisan-card">
+        <section className="artisan-card">
             <div className="row justify-content-center">
                 {fabricationArtisans.map((artisan, index) => (
                     <div className="col-12 col-md-4" key={index}>
@@ -26,7 +26,7 @@ function FabricationArtisans({ fabricationArtisans }) {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
 

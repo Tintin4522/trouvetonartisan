@@ -4,7 +4,7 @@ function AlimentationArtisans( {alimentationArtisans}) {
 
     return (
 
-        <div className="artisan-card">
+        <section className="artisan-card">
             <div className="row justify-content-center">
                 {alimentationArtisans.map((artisan, index) => (
                     <div className="col-12 col-md-4" key={index}>
@@ -28,7 +28,7 @@ function AlimentationArtisans( {alimentationArtisans}) {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 

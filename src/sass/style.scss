@@ -108,20 +108,15 @@ nav {
   transform: scaleX(1);
 }
 
-.search-input {
-  width: 80%;
-  border: none;
-  padding: 10px;
-  margin: 0 auto;
-  display: block;
-  box-sizing: border-box;
-  font-size: 16px;
-  border-right: 2px solid #0074c7;
-  border-bottom: 2px solid #0074c7;
+.navlinks {
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: nowrap; 
+  justify-content: space-between;
 }
 
-input:focus {
-  outline: none;
+#search {
+  font-size: 36px;
 }
 
 @media (max-width: 900px) {
@@ -149,17 +144,6 @@ input:focus {
     display: flex;
     align-items: center;
     margin-right: 20px; 
-  }
-
-  .search-icon {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
   }
 
   .mobile-nav {
@@ -243,16 +227,8 @@ input:focus {
     z-index: 10;
   }
 
-  .mobile-search input {
-    width: 80%;
-    border: none;
-    padding: 10px;
-    margin: 0 auto;
-    display: block;
-    box-sizing: border-box;
-    font-size: 16px;
-    border-right: 2px solid #0074c7;
-    border-bottom: 2px solid #0074c7;
+  #search {
+    font-size: 22px;
   }
 }
 
@@ -295,12 +271,6 @@ input:focus {
   @include textcolor2;
   margin: 10px 10px; 
   font-size: 28px;
-}
-
-//Mise en page du site
-
-.page {
-  padding-top: 25vh;
 }
 
 // mise en page de Home
@@ -370,7 +340,6 @@ li {
   align-items: center;
   justify-content: center;
   height: 100vh; 
-  padding-top: 20vh;
 }
 
 .img-pagenotfound {
@@ -392,8 +361,8 @@ li {
 
 .artisanDetails {
   width: 80%;
-  margin: auto;  
-  padding-top: 40vh;
+  margin: auto; 
+  margin-top: 5vh; 
   padding-bottom: 10vh;
 }
 
@@ -444,4 +413,30 @@ h4 {
   background-color: #82b864;
   color: #f1f8fc;
   
+}
+
+// Mise en page Recherche Artisan
+
+.searchArtisan {
+  text-align: center;
+}
+
+.search-input {
+  width: 80%;
+  border: none;
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-right: 2px solid #0074c7;
+  border-bottom: 2px solid #0074c7;
+}
+
+.search-input::placeholder {
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
 }

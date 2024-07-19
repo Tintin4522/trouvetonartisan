@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
+
+
 function Header() {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [isSearchVisible, setIsSearchVisible] = useState(false);    
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth); 
     const [isNavOpen, setIsNavOpen] = useState(false);
-    
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
@@ -14,10 +14,7 @@ function Header() {
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
-    const handleSearchToggle = () => {
-        setIsSearchVisible(!isSearchVisible);
-    };
+    
 
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
@@ -47,17 +44,12 @@ function Header() {
                                 <span></span>
                                 <span></span>
                             </button>
-                            <div className="search-container">
-                                <button className="search-icon" onClick={handleSearchToggle} aria-label="Recherche">
-                                    <i className="fa-solid fa-magnifying-glass" id='search'></i>
-                                </button>
-                            </div>
                         </div>
                     )}
                     <div className="navlinks">
-                        <div className="search-container">
-                            <input type="search" className="search-input" placeholder="Rechercher..." />
-                        </div>
+                        <Link to='/search' className="search-icon" aria-label="Recherche">
+                            <i className="fa-solid fa-magnifying-glass" id="search"></i>
+                        </Link>
                         <div className={`navlinks-container ${isNavOpen ? 'open' : ''}`}>
                             <Link to="/" aria-current="page" onClick={closeNav}>Accueil</Link>
                             <Link to="/Batiment" onClick={closeNav}>Bâtiment</Link> 
@@ -68,11 +60,6 @@ function Header() {
                     </div>
                 </div>
             </nav>
-            {isSearchVisible && windowWidth <= 900 && (
-                <div className="mobile-search">
-                    <input type="search" className="search-input-mobile" placeholder="Rechercher..." />
-                </div>
-            )}
         </header>
     );
 }

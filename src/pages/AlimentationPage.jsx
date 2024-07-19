@@ -8,9 +8,9 @@ function Alimentation() {
 
     return (
 
-        <div className="page">            
+        <main className="page">            
             <AlimentationArtisans alimentationArtisans={alimentationArtisans()} />
-        </div>
+        </main>
     )
 }
 

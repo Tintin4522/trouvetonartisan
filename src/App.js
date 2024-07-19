@@ -11,7 +11,7 @@ import Fabrication from "./pages/FabricationPage";
 import Alimentation from "./pages/AlimentationPage";
 import Notfound from './pages/404Page';
 import ArtisanDetail from './components/ArtisanDetail';
-import SearchResults from './pages/SearchResults';
+import SearchArtisansPage from './pages/SearchArtisans';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -34,17 +34,19 @@ function App() {
       <div className="App">
         <Header />
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/batiment" element={<Batiment />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/fabrication" element={<Fabrication />} />
-          <Route path="/alimentation" element={<Alimentation />} />
-          <Route path="/notfound" element={<Notfound />} />
-          <Route path="/artisan/:id" element={<ArtisanDetail />} />
-          <Route path="/search-results" component={<SearchResults />} />
-        </Routes>
-        <Footer />
+          <div className="Page">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/batiment" element={<Batiment />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/fabrication" element={<Fabrication />} />
+              <Route path="/alimentation" element={<Alimentation />} />
+              <Route path="/notfound" element={<Notfound />} />
+              <Route path="/artisan/:id" element={<ArtisanDetail />} />
+              <Route path="/search" element={<SearchArtisansPage />} />
+            </Routes>
+            <Footer />
+          </div>
       </div>
     </Router>
   );

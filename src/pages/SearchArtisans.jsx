@@ -1,10 +1,37 @@
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import data from '../datas.json'; 
+import { Link } from 'react-router-dom';
 
-function BatimentArtisans({ batimentArtisans }) {
-    return (
-        <section className="artisan-card">
+const SearchArtisansPage = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredArtisans, setFilteredArtisans] = useState([]);
+
+  const handleSearch = (event) => {
+    const value = event.target.value.toLowerCase();
+    setSearchQuery(value);
+
+    const filtered = data.filter(artisan =>
+      artisan.name.toLowerCase().includes(value) ||
+      artisan.specialty.toLowerCase().includes(value) ||
+      artisan.location.toLowerCase().includes(value)
+    );
+
+    setFilteredArtisans(filtered);
+  };
+
+  return (
+    <main className="page">
+      <h2 className="searchArtisan">Trouver votre artisan</h2>
+      <input
+        className="search-input"
+        type="text"
+        placeholder="Rechercher votre artisan ici..."
+        value={searchQuery}
+        onChange={handleSearch}
+      />
+      <div className="artisan-card">
             <div className="row justify-content-center">
-                {batimentArtisans.map((artisan, index) => (
+                {filteredArtisans.map((artisan, index) => (                    
                     <div className="col-12 col-md-4" key={index}>
                         <Link to={`/artisan/${artisan.id}`} className="artisan-link">
                             <div className="artisan">
@@ -26,11 +53,9 @@ function BatimentArtisans({ batimentArtisans }) {
                     </div>
                 ))}
             </div>
-        </section>
-    );
-}
+        </div>
+    </main>
+  );
+};
 
-export default BatimentArtisans;
-
-
-
+export default SearchArtisansPage;

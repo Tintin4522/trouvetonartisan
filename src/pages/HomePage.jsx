@@ -8,7 +8,7 @@ function Home() {
 
     return (
 
-        <div className="page">
+        <main className="page">
             <div>
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-8 tuto">
@@ -23,7 +23,7 @@ function Home() {
                 </div>
             </div>
             <Artisan topArtisans={topArtisans()} />
-        </div>
+        </main>
     )
 }
 
